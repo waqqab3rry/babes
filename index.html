@@ -11,6 +11,7 @@
       font-family: 'VT323', monospace;
       background: #000;
       color: #DDDDDD;
+      cursor: pointer;
     }
     .section {
       opacity: 0;
@@ -29,7 +30,7 @@
   <div id="clickHint" class="mt-4 text-sm">click to begin</div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    window.onload = () => {
       const sections = [
         { text: 'Eğer tıkladıysan sana bir hikaye anlatmak istiyorum.' },
         { text: 'Gerçekten merak ediyorsan sana küçük bir hatırlatma yapmak isterim;\n\n\'Flaubert\'e göre aşkın tanımı, "merak"tır. Ona göre, aşka dönüşen bir his, birine karşı duyulan korkunç bir merakla başlar. Bu merak, o kişiyi tanıma, onunla birlikte olma ve adeta onunla yeniden doğma arzusunu beraberinde getirir. Flaubert\'e göre, aşka en uzak cümle "senden nefret ediyorum" değil, "artık bilmek istemiyorum"dur.\'\n\nEğer hala merak ediyorsan lütfen tıklamaya devam et sevgilim.' },
@@ -38,7 +39,7 @@
         { text: 'İlk tanıştığımız günü hatırlıyor musun?' },
         { text: 'O güne dair nedense sadece havanın çok yağmurlu olduğunu ve salataya konan enginarları çok net hatırlıyorum, tabii hatırladığım bir sürü şey daha var. Fakat yağmur, soğuk ve enginar üçlemesi benim için önemli. Bunlar benim için yaşam belirtisini temsil ediyor. Çünkü gerçekten bir insan hayattaysa duyularına hitap eden bu gerçekliği yaşayabilir.' },
         { text: '"Anlatmaya buradan başladıysa tıkla tıkla bitmez bu" diye düşünebilirsin... haksız da sayılmazsın ama merak etme, artık daha az kelime ile daha çok şey anlatmak ve seni sıkmamak için kendimi törpülemeyi öğrenmeye başladım. Hadi devam edelim sevgilim, neden böyle bir doğum günü hediyesi aldın? Tıklamaya devam et.' },
-        { text: 'Neden böyle bir hediye aldın ben de bilmiyorum, hadi tıklamaya devam et.' },
+        { text: 'NEDEN BÖYLE BİR HEDİYE ALDIĞINI BEN DE BİLMİYORUM.\n\nTıklamaya devam et :)))' },
         { text: 'Doğrusunu söylemek gerekirse bu oldukça uzun bir hikaye ve uzun zaman önce planlanmış bir doğum günü hediyesiydi ama artık kısa ve öz bir doğum günü hediyesi. Tıklamaya devam et lütfen.' },
         { text: 'Daha fazla tıklamayacaksın, pek söyleyecek bir şeyim de yok aslında, seni gerçekten çok seviyorum, tahmin bile edemeyeceğin kadar çok seviyorum. Son bir tıklamaya ihtiyacım var.' },
         { text: 'İyi ki doğdun sevgilim, hayat seni bana getirdi ve umarım seni benden hiçbir zaman geri almaz, yıllar geçtikçe pastalarımızı daha kalabalık üflemenin hayali hoşuma gidiyor. Yeni yaşında umarım buralarda olurum ve yine bir şeyleri başardığını izlerken hayran hayran sana bakmaya devam ederim. Seni çok seviyorum.' }
@@ -60,13 +61,13 @@
         }
       }
 
-      document.addEventListener('click', () => {
+      document.body.addEventListener('click', () => {
         showNext();
         if (current > 0) {
           clickHint.style.display = 'none';
         }
       });
-    });
+    };
   </script>
 </body>
 </html>
